@@ -218,9 +218,9 @@ Boilerplate code for ROS2 applications
 
 ### Bags
 
-- ROS2 bags
-mkdir bags
-cd bags
+- ROS2 bags  
+`mkdir bags`  
+`cd bags`
 
 - Show bag tools
 ros2 bag
