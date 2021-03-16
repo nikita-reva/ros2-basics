@@ -80,12 +80,24 @@ Boilerplate code for ROS2 applications
 `ros2 node info /py_test`
 
 - Run node with new name  
-`ros2 run package_name node_name --ros-args --remap __node:=new_name`
+`ros2 run package_name node_name --ros-args --remap __node:=new_name`  
 `ros2 run package_name node_name --ros-args -r __node:=new_name`
 
 ---
 
 ### Interfaces
+
+- Create new package for custom interfaces  
+`ros2 pkg create interfaces_package_name  
+cd interfaces_package_name  
+rm -rf include/ src/  
+mkdir msg  
+mkdir srv  `
+- Build the interfaces package and view generated file  
+`colcon build --packages-select interfaces_package_name  
+cd ros2_ws/install/interfaces_package_name/lib/python3.8/site-packages/interfaces_package_name/msg  
+gedit _hardware_status.py  `
+
 
 - Show list of available interfaces in your environment  
 `ros2 interface list`
@@ -132,46 +144,42 @@ Boilerplate code for ROS2 applications
 
 ### Services
 
-// Show service options
-ros2 service
+- Show service options  
+`ros2 service`
 
-// Show list of services
-ros2 service list
+- Show list of services  
+`ros2 service list`
 
-// Show service type (interface -> ros2 interface show /interface.name)
-ros2 service type /service_name
+- Show service type (interface -> ros2 interface show /interface.name)  
+`ros2 service type /service_name`
 
-// Call service from terminal
-ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"
+- Call service from terminal  
+`ros2 service call /add_two_ints example_interfaces/srv/AddTwoInts "{a: 3, b: 4}"`
 
-// Call service with new service name (needed in server and clients)
-ros2 run my_cpp_pkg add_two_ints_server --ros-args -r add_two_ints:=new_name
+- Call service with new service name (needed in server and clients)  
+`ros2 run my_cpp_pkg add_two_ints_server --ros-args -r add_two_ints:=new_name`
 
-// View action tools
-ros2 action
+---
 
-// View actions list
-ros2 action list
+### Actions
 
-// View action information
-ros2 action info /action_name
+- View action tools  
+`ros2 action`
 
-// View action information
-ros2 action send_goal /action_name interface_name "goal_key: goal_value"
+- View actions list  
+`ros2 action list`
 
-// View action information (with feedback)
-ros2 action send_goal -f /action_name interface_name "goal_key: goal_value"
+- View action information  
+`ros2 action info /action_name`
 
-// Create new interfaces package
-ros2 pkg create my_robot_interfaces
-cd my_robot_interfaces
-rm -rf include/ src/
-mkdir msg
-mkdir srv
-// Build the interfaces package and view generated file
-colcon build --packages-select my_robot_interfaces
-cd ros2_ws/install/my_robot_interfaces/lib/python3.8/site-packages/my_robot_interfaces/msg
-gedit _hardware_status.py
+- View action information  
+`ros2 action send_goal /action_name interface_name "goal_key: goal_value"`
+
+- View action information (with feedback)  
+`ros2 action send_goal -f /action_name interface_name "goal_key: goal_value"`
+
+---
+
 
 // Show list of parameters
 ros2 param list
