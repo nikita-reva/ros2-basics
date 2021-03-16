@@ -12,8 +12,8 @@ Boilerplate code for ROS2 applications
 - Use ROS in terminal  
 `source /opt/ros/setup.bash`
 
-- Create a new package
-`ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy`
+- Create a new package  
+`ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy`  
 `ros2 pk create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp`
 
 - Create new node source code file (my_py_pkg/my_py_pkg)  
