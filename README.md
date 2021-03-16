@@ -112,6 +112,8 @@ Boilerplate code for ROS2 applications
 
 ---
 
+### Topics
+
 - Topics functions    
 `ros2 topic`
 
