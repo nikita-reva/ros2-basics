@@ -13,38 +13,38 @@ Boilerplate code for ROS2 applications
 `source /opt/ros/setup.bash`
 
 - Create a new package
-ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy
-ros2 pk create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp
+`ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy`
+`ros2 pk create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp`
 
-- Create new node source code file (my_py_pkg/my_py_pkg)
-touch my_first_node.py
+- Create new node source code file (my_py_pkg/my_py_pkg)  
+`touch my_first_node.py`
 
-- Make file executable
-chmod +x my_first_node.py
+- Make file executable  
+`chmod +x my_first_node.py`
 
-- Run node
-./my_first_node.py
+- Run node  
+`./my_first_node.py`
 
-- Edit .bashrc file
-gedit .bashrc
+- Edit .bashrc file  
+`gedit .bashrc`
 
-- Source .bashrc file
-source .bashrc
+- Source .bashrc file  
+`source .bashrc`
 
-- View .bashrc file in terminal
-cat ~/.bashrc
+- View .bashrc file in terminal  
+`cat ~/.bashrc`
 
-- Run node from install directory
-ros2 run my_py_pkg py_node
+- Run node from install directory  
+`ros2 run my_py_pkg py_node`
 
-- Show all ros2 commands
-ros2
+- Show all ros2 tools 
+`ros2`
 
-- Show all nodes of a package
-ros2 run my_py_pkg ((press Tab twice))
+- Show all nodes of a package  
+`ros2 run my_py_pkg` ((press Tab twice))
 
-- Show ros2 help 
-ros2 -h
+- Show ros2 help   
+`ros2 -h`
 
 ---
 
