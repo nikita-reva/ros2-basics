@@ -5,8 +5,6 @@ Boilerplate code for ROS2 applications
 
 ## Command Line Tools
 
----
-
 ### General
 
 - Use ROS in terminal  
@@ -46,81 +44,93 @@ Boilerplate code for ROS2 applications
 - Show ros2 help   
 `ros2 -h`
 
+- Start rqt gui  
+`rqt`
+
+- Start rqt gui graph  
+`rqt_graph`
+
+- Install Turtlesim  
+`sudo apt install ros-foxy-turtlesim`
+
+- Launch turtlesim  
+`ros2 run turtlesim turtlesim_node`
+
+- Launch turtlesim  
+`ros2 run turtlesim turtle_teleop_key`
+
 ---
 
 ### Build
 
-- Build python package with symlink
-colcon build --packages-select package_name --symlink-install
+- Build python package with symlink  
+`colcon build --packages-select package_name --symlink-install`
+
+---
 
 ### Nodes
 
-- Show node tools
-ros2 node
+- Show node tools  
+`ros2 node`
 
-- List all nodes in a graph
-ros2 node list
+- List all nodes in a graph  
+`ros2 node list`
 
-- Show node information
-ros2 node info /py_test
+- Show node information  
+`ros2 node info /py_test`
 
-- Run node with new name
-ros2 run package_name node_name --ros-args --remap __node:=new_name
-ros2 run package_name node_name --ros-args -r __node:=new_name
+- Run node with new name  
+`ros2 run package_name node_name --ros-args --remap __node:=new_name`
+`ros2 run package_name node_name --ros-args -r __node:=new_name`
 
-// Start rqt gui
-rqt
+---
 
-// Start rqt gui graph
-rqt_graph
+### Interfaces
 
-// Install Turtlesim
-sudo apt install ros-foxy-turtlesim
+- Show list of available interfaces in your environment  
+`ros2 interface list`
 
-// Launch turtlesim
-ros2 run turtlesim turtlesim_node
+- Show list of available interfaces in a package  
+`ros2 interface package sensor_msgs`
 
-// Launch turtlesim
-ros2 run turtlesim turtle_teleop_key
+- Show interface details  
+`ros2 interface show example_interfaces/msg/String`
 
-// Show list of available interfaces in your environment
-ros2 interface list
+- Show interface prototype  
+`ros2 interface proto example_interfaces/msg/String`
 
-// Show list of available interfaces in a package
-ros2 interface package sensor_msgs
+---
 
-// Show interface details
-ros2 interface show example_interfaces/msg/String
+- Topics functions    
+`ros2 topic`
 
-// Show interface prototype
-ros2 interface proto example_interfaces/msg/String
+- List all topics  
+`ros2 topic list`
 
-// Topics functions
-ros2 topic
+- Echo topic output  
+`ros2 topic echo /topic_name`
 
-// List all topics
-ros2 topic list
+- Show topic information  
+`ros2 topic info /topic_name` 
 
-// Echo topic output
-ros2 topic echo /topic_name 
+- Examine topic frequency  
+`ros2 topic hz /topic_name`
 
-// Show topic information
-ros2 topic info /topic_name 
+- Examine topic bandwidth  
+`ros2 topic bw /topic_name`
 
-// Examine topic frequency
-ros2 topic hz /topic_name
+- Publish on topic from terminal  
+`ros2 topic pub -r 10 /topic_name example_interfaces/msg/String "{data: 'Hello from Terminal'}"`
 
-// Examine topic bandwidth
-ros2 topic bw /topic_name
+- Rename node and topic (publisher)  
+`ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station -r robot_news:=my_news`
 
-// Publish on topic from terminal
-ros2 topic pub -r 10 /topic_name example_interfaces/msg/String "{data: 'Hello from Terminal'}"
+- Rename topic (subscriber)  
+`ros2 run my_py_pkg smartphone --ros-args -r robot_news:=my_news`
 
-// Rename node and topic (publisher)
-ros2 run my_py_pkg robot_news_station --ros-args -r __node:=my_station -r robot_news:=my_news
+---
 
-// Rename topic (subscriber)
-ros2 run my_py_pkg smartphone --ros-args -r robot_news:=my_news
+### Services
 
 // Show service options
 ros2 service
