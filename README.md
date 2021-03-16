@@ -88,16 +88,15 @@ Boilerplate code for ROS2 applications
 ### Interfaces
 
 - Create new package for custom interfaces  
-`ros2 pkg create interfaces_package_name  
-cd interfaces_package_name  
-rm -rf include/ src/  
-mkdir msg  
-mkdir srv  `
+`ros2 pkg create interfaces_package_name`  
+`cd interfaces_package_name`  
+`rm -rf include/ src/`  
+`mkdir msg`  
+`mkdir srv`  
 - Build the interfaces package and view generated file  
-`colcon build --packages-select interfaces_package_name  
-cd ros2_ws/install/interfaces_package_name/lib/python3.8/site-packages/interfaces_package_name/msg  
-gedit _hardware_status.py  `
-
+`colcon build --packages-select interfaces_package_name`  
+`cd ros2_ws/install/interfaces_package_name/lib/python3.8/site-packages/interfaces_package_name/msg`  
+`gedit _hardware_status.py`
 
 - Show list of available interfaces in your environment  
 `ros2 interface list`
@@ -180,54 +179,63 @@ gedit _hardware_status.py  `
 
 ---
 
+### Parameters
 
-// Show list of parameters
-ros2 param list
+- Show list of parameters  
+`ros2 param list`
 
-// Get specific parameter of a node
-ros2 param get /node_name param_name
+- Get specific parameter of a node  
+`ros2 param get /node_name param_name`
 
-// Set specific parameter in terminal
-ros2 run package_name node_name --ros-args -p param_name:=value
+- Set specific parameter in terminal  
+`ros2 run package_name node_name --ros-args -p param_name:=value`
 
-// Set multiple parameters in terminal
-ros2 run package_name node_name --ros-args -p param_1_name:=value_1 -p param_2_name:=value_2
+- Set multiple parameters in terminal  
+`ros2 run package_name node_name --ros-args -p param_1_name:=value_1 -p param_2_name:=value_2`
 
-// Set parameter with an array value in terminal
-ros2 run my_cpp_pkg led_panel --ros-args -p led_states:=[1,1,0]
+- Set parameter with an array value in terminal  
+`ros2 run my_cpp_pkg led_panel --ros-args -p led_states:=[1,1,0]`
 
-// Create new launch files package (in ros2_ws/src)
-ros2 pkg create my_robot_bringup
-cd my_robot_bringup
-rm -rf include/ src/
-mkdir launch
-cd lauch
-touch number_app.launch.py
+---
 
-// Build launch files package
-colcon build --packages-select my_robot_bringup --symlink-install
+### Launch files
 
-// Start launch file
-ros2 launch package_name name.launch.py
+- Create new launch files package (in ros2_ws/src)  
+`ros2 pkg create my_robot_bringup`  
+`cd my_robot_bringup`  
+`rm -rf include/ src/`  
+`mkdir launch`  
+`cd lauch`  
+`touch number_app.launch.py`  
 
-// ROS2 bags
+- Build launch files package  
+`colcon build --packages-select my_robot_bringup --symlink-install`
+
+- Start launch file  
+`ros2 launch package_name name.launch.py`
+
+--- 
+
+### Bags
+
+- ROS2 bags
 mkdir bags
 cd bags
 
-// Show bag tools
+- Show bag tools
 ros2 bag
 
-// Record output of a topic (stores in a SQLite database)
-ros2 bag record /topic_name
+- Record output of a topic (stores in a SQLite database)  
+`ros2 bag record /topic_name`
 
-// Record output of a topic with a specified file_name
-ros2 bag record /topic_name -o output_file_name
+- Record output of a topic with a specified file_name  
+`ros2 bag record /topic_name -o output_file_name`
 
-// Record output of multiple topics
-ros2 bag record /topic_1_name /topic_2_name ... /topic_x_name -o output_file_name
+- Record output of multiple topics  
+`ros2 bag record /topic_1_name /topic_2_name ... /topic_x_name -o output_file_name`
 
-// View bag information
-ros2 bag info output_file_name
+- View bag information  
+`ros2 bag info output_file_name`
 
-// Play bag recording
-ros2 bag play output_file_name
+- Play bag recording  
+`ros2 bag play output_file_name`
