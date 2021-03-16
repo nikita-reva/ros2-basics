@@ -9,8 +9,8 @@ Boilerplate code for ROS2 applications
 
 ### General
 
-- To use ROS in terminal
-source /opt/ros/setup.bash
+- Use ROS in terminal  
+`source /opt/ros/setup.bash`
 
 - Create a new package
 ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy
