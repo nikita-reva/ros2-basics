@@ -18,9 +18,12 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/HardwareStatus.msg"
   "msg/LedStates.msg"
   "msg/LedStateArray.msg"
+  "msg/Turtle.msg"
+  "msg/TurtleArray.msg"
   "srv/ComputeRectangleArea.srv"
   "srv/SetLed.srv"
   "action/Fibonacci.action"
+  "srv/CatchTurtle.srv"
 )
 
 ament_package()
