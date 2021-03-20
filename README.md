@@ -12,7 +12,7 @@ Boilerplate code for ROS2 applications
 
 - Create a new package  
 `ros2 pkg create my_py_pkg --build-type ament_python --dependencies rclpy`  
-`ros2 pk create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp`
+`ros2 pkg create my_cpp_pkg --build-type ament_cmake --dependencies rclcpp`
 
 - Create new node source code file (my_py_pkg/my_py_pkg)  
 `touch my_first_node.py`
