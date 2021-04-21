@@ -120,6 +120,9 @@ Boilerplate code for ROS2 applications
 - List all topics  
 `ros2 topic list`
 
+- Publish on topic  
+`ros2 topic pub /topic_name message_type "{ message_key1: value1, message_key2: value2, ... }"` -r: pub_rate_value
+
 - Echo topic output  
 `ros2 topic echo /topic_name`
 
