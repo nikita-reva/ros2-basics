@@ -129,6 +129,9 @@ Boilerplate code for ROS2 applications
 - Show topic information  
 `ros2 topic info /topic_name` 
 
+- Show extended topic information  
+`ros2 topic info -v /topic_name`  
+
 - Examine topic frequency  
 `ros2 topic hz /topic_name`
 
